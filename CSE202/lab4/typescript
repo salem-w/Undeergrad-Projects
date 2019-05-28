@@ -1,0 +1,28 @@
+Script started on Wed 04 May 2016 12:36:02 PM PDT
+[004893625@csex11 lab4]$ make
+g++ -c Person_main.cpp
+g++ -c Person.cpp 
+g++ -o Person Person_main.o Person.o
+[004893625@csex11 lab4]$ ./Person
+Who is Jackie's best freind? 
+Jack
+Who is Jack's best freind? 
+Sam
+Couldn't find best friend Sam
+Enter a new name:
+JAmanda
+Who is Amanda's best freind? 
+Jack
+Who is Rod's best freind? 
+Connie
+Who is Connie's best freind? 
+Rod
+Jackie    Jack       0
+Jack      Amanda     2
+Amanda    Jack       1
+Rod       Connie     1
+Connie    Rod        1
+[004893625@csex11 lab4]$ exit
+exit
+
+Script done on Wed 04 May 2016 12:37:14 PM PDT

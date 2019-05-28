@@ -1,0 +1,35 @@
+Script started on Thu 25 Feb 2016 11:37:09 AM PST
+]0;004893625@jb359-10:/students/csci/004893625/CSE201/LAB05]7;file://jb359-10/students/csci/004893625/CSE201/LAB05[?1034h[004893625@jb359-10 LAB05]$ lpr salem_LAB04_B.cppA.cppB.cpp[K./SALEM_LAB05
+9 is not prime! 
+9 is divisible by 1. 
+9 is not divisible by 2! 
+9 is divisible by 3. 
+9 is not divisible by 8! 
+9 is divisible by 9. 
+
+
+7 is prime. 
+7 is divisible by 1. 
+7 is not divisible by 2! 
+7 is not divisible by 3! 
+7 is divisible by 7. 
+
+
+77 is not prime! 
+
+
+73 is prime. 
+
+
+27 is not prime! 
+27 is not divisible by 2! 
+27 is divisible by 3. 
+27 is divisible by 9. 
+
+
+All tests passed.
+
+]0;004893625@jb359-10:/students/csci/004893625/CSE201/LAB05]7;file://jb359-10/students/csci/004893625/CSE201/LAB05[004893625@jb359-10 LAB05]$ exit
+exit
+
+Script done on Thu 25 Feb 2016 11:37:31 AM PST

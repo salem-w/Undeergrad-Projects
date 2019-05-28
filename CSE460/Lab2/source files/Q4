@@ -1,0 +1,11 @@
+#clear
+clear
+#let x = 20
+x=20
+#let y = 5
+y=5
+#quotients of x/y
+echo "x/y is"
+echo $(($x/$y))
+exit 0
+

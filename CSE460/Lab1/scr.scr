@@ -1,0 +1,13 @@
+Script started on 2018-04-04 20:14:49-0700
+]0;004893625@csusb.edu@jb359-1:~/CSE460/Lab1[004893625@csusb.edu@jb359-1 Lab1]$ rm *.o
+]0;004893625@csusb.edu@jb359-1:~/CSE460/Lab1[004893625@csusb.edu@jb359-1 Lab1]$ rm message
+]0;004893625@csusb.edu@jb359-1:~/CSE460/Lab1[004893625@csusb.edu@jb359-1 Lab1]$ make
+g++ -c message.cpp -o message.o
+g++ -c main.cpp -o main.o
+g++ -o message message.o main.o
+]0;004893625@csusb.edu@jb359-1:~/CSE460/Lab1[004893625@csusb.edu@jb359-1 Lab1]$ ./message 
+CSUSB CSE 460 the Beautiful!
+]0;004893625@csusb.edu@jb359-1:~/CSE460/Lab1[004893625@csusb.edu@jb359-1 Lab1]$ exit
+exit
+
+Script done on 2018-04-04 20:15:17-0700

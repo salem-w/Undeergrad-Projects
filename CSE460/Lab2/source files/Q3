@@ -1,0 +1,7 @@
+#
+#clear
+clear
+#sum of 3 + 6
+echo "Sum of 3 + 6 :".
+expr 3 + 6
+exit 0

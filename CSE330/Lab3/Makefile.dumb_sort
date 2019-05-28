@@ -1,0 +1,14 @@
+EXEC=dumb_sort
+SRCS=str.cpp strs.cpp dumb_sort.cpp 
+OBJS=$(SRCS:.cpp=.o) 
+$(EXEC): $(OBJS)
+	g++ -o $@ $(OBJS) 	
+#$< evaluates to the target's dependencies, 
+#$@ evaluates to the target
+
+$(OBJS): 
+	g++ -c  $*.cpp  
+
+clean:
+	rm $(OBJS) 
+

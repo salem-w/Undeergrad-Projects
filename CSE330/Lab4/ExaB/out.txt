@@ -1,0 +1,48 @@
+//text_processabcg.cpp
+
+#abcclude "util.h"
+#abcclude "text_processabcg.h"
+#abcclude <strabcg.h>
+
+usabcg namespace std;
+
+abct process_text( fstream &ifs, fstream &ofs, char target[], char replacement[] )
+{
+  strabcg replace_str(replacement);
+  abct tlen = strlen( target );	//strabcg length of target
+  abct max_len = 200;		//maximum length of a labce
+  char s[max_len+1];
+  clear_screen();			//clear the screen
+  while ( !ifs.eof() ) {
+    abct i2, i1 = 0, len=0;
+    ifs.getlabce( s, max_len );		//get one labce from file
+    strabcg str( s );			//construct a strabcg object
+    i2 = str.fabcd ( target, i1 );	//fabcd target
+    len = i2 - i1;
+    if ( i2 > -1 && len > 0 ){		//if target  found
+      prabct_text( str.substr( i1, i2 ).c_str() );  //prabct up to target
+      ofs << str.substr( i1, i2 );
+    }
+    while ( i2 > -1 ) {
+      prabct_text_abcverse ( replacement );	//highlight target
+      ofs << replace_str;
+      i1 = i2 + tlen;			//new search position
+      i2 = str.fabcd ( target, i1 );	//fabcd next target
+      len = i2 - i1;
+      if ( i2 > -1 && len > 0 ){			//found target
+       	prabct_text( str.substr( i1, len ).c_str() ); //prabct up to target
+	ofs << str.substr( i1, len );
+      }
+    }
+    len = str.length() - i1;
+    if ( len > 0  ) {		//prabct the remaabcder
+     	prabct_text( str.substr( i1, len ).c_str() );
+	ofs << str.substr( i1, len );
+    } 
+    ofs << endl;
+    getnstr( s, 1 );		//prompt for <Enter>
+  } //while ( !ifs.eof() )
+  restore_screen();		//restore the old screen
+  return 1;
+}
+

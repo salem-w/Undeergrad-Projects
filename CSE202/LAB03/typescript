@@ -1,0 +1,14 @@
+Script started on Wed 27 Apr 2016 10:35:56 AM PDT
+[004893625@csex11 LAB03]$ ./a.out
+str1=abcd str2=efg
+strlen(str1)=4 strlen(str2)=3
+str1=efg
+str1=efgefg
+strcmp(str1, str2)=101
+strcmp(str2, "efh")=-1
+str2=hi
+str2=hi jkl
+[004893625@csex11 LAB03]$ exit
+exit
+
+Script done on Wed 27 Apr 2016 10:36:03 AM PDT

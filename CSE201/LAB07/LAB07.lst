@@ -1,0 +1,23 @@
+Script started on Mon 21 Mar 2016 12:23:50 PM PDT
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[?1034h[004893625@jb359-4 LAB07]$ exit./LAB07_2.out[1P.out1.out
+Enter a value to search in the vector:
+98
+Found a match!
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[004893625@jb359-4 LAB07]$ ./LAB07_1.out
+Enter a value to search in the vector:
+45
+Found a match!
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[004893625@jb359-4 LAB07]$ ./LAB07_1.out[1P.out2.out
+Enter the value you want the index of:
+14
+No matching value was found!
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[004893625@jb359-4 LAB07]$ ./LAB07_2.out
+Enter the value you want the index of:
+145
+The matching value is at index 5
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[004893625@jb359-4 LAB07]$ ./LAB07_2.out[1P.out3.out
+All tests passed.
+]0;004893625@jb359-4:~/CSE201/LAB07]7;file://jb359-4/u/csci/004893625/CSE201/LAB07[004893625@jb359-4 LAB07]$ exit
+exit
+
+Script done on Mon 21 Mar 2016 12:24:38 PM PDT

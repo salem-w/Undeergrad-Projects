@@ -1,0 +1,11 @@
+Script started on Wed 25 May 2016 11:49:13 AM PDT
+[004893625@csex11 lab7]$ ./palindrome
+Enter a string: Madam, I'm Adam
+'Madam, I'm Adam' is a palindrome. 
+[004893625@csex11 lab7]$ ./palindrome
+Enter a string: RoTOr
+'RoTOr' is a palindrome. 
+[004893625@csex11 lab7]$ exit
+exit
+
+Script done on Wed 25 May 2016 11:50:00 AM PDT

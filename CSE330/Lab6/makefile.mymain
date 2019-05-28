@@ -1,0 +1,16 @@
+#Makefile.mymain for mergsort using library
+EXEC=mysort
+SRCS=mymain.cpp 
+OBJS=$(SRCS:.cpp=.o) 
+
+$(EXEC): $(OBJS) libsort.a
+	g++ -o $@ $(OBJS)  libsort.a	
+#$< evaluates to the target's dependencies, 
+#$@ evaluates to the target
+
+$(OBJS): 
+	g++ -c  $*.cpp  
+
+clean:
+	rm $(OBJS) 
+

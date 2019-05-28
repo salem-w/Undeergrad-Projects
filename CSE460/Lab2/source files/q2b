@@ -1,0 +1,8 @@
+#Q2B
+#cler
+clear
+#set xn = rani
+xn="rani"
+echo "The value of xn is $xn"
+exit 0
+

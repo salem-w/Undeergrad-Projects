@@ -1,0 +1,30 @@
+Script started on Wed 04 May 2016 01:35:30 PM PDT
+[004893625@csex11 hw2]$ make
+g++ -c Roster.cpp
+g++ -c Student.cpp
+g++ -c Course.cpp
+g++ -o Roster Roster.o Student.o Course.o
+[004893625@csex11 hw2]$ ./Roster
+CSE202
+    Jack      12306 
+    Joe       32002 
+    Kathy     50202 
+
+MATH272
+    Jack      12306 
+    Kim       45621 
+    Tony      41523 
+
+PHYS221
+    Jack      12306 
+    Joe       32002 
+    Kathy     50202 
+
+HIST101
+    Kim       45621 
+    Tony      41523 
+
+[004893625@csex11 hw2]$ exit
+exit
+
+Script done on Wed 04 May 2016 01:35:43 PM PDT

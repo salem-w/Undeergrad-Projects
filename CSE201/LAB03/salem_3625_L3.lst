@@ -1,0 +1,21 @@
+Script started on Thu 11 Feb 2016 12:15:48 PM PST
+]0;004893625@jb359-10:/students/csci/004893625/CSE201/LAB03]7;file://jb359-10/students/csci/004893625/CSE201/LAB03[?1034h[004893625@jb359-10 LAB03]$ lpr salem_LAB03_B.cppA.cpp3625_L3.lst[3@script[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out[Kc++ salem_LAB03_A.cpp[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K./la[K[KLAB-3_a.[K[KA.out[1P3_A.out03_A.out
+Enter a positive integer greater than 1 
+56
+56is not prime it is divisible by 2
+]0;004893625@jb359-10:/students/csci/004893625/CSE201/LAB03]7;file://jb359-10/students/csci/004893625/CSE201/LAB03[004893625@jb359-10 LAB03]$ ./LAB03_A.out[1P.out[1P.out[1P.out[1P.out[1P.out[1P.out[1P.outa.out
+Enter a positive integer greater than 1 
+393
+2	3	5	7	11	13	17	19	23	29	
+31	37	41	43	47	53	59	61	67	
+71	73	79	83	89	97	101	103	107	
+109	113	127	131	137	139	149	151	157	
+163	167	173	179	181	191	193	197	199	
+211	223	227	229	233	239	241	251	257	
+263	269	271	277	281	283	293	307	311	
+313	317	331	337	347	349	353	359	367	
+373	379	383	389	
+]0;004893625@jb359-10:/students/csci/004893625/CSE201/LAB03]7;file://jb359-10/students/csci/004893625/CSE201/LAB03[004893625@jb359-10 LAB03]$ exit
+exit
+
+Script done on Thu 11 Feb 2016 12:16:45 PM PST

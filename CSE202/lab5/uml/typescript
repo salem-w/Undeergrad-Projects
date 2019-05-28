@@ -1,0 +1,20 @@
+Script started on Wed 11 May 2016 09:43:04 AM PDT
+[004893625@csex11 uml]$ make
+g++ -c Person.cpp
+g++ -c Student.cpp
+g++ -c Instructor.cpp
+g++ -c school_main.cpp
+g++ -o School school_main.o Student.o Instructor.o Person.o
+[004893625@csex11 uml]$ ./School
+Derek 6/14/92
+	Student, Major: CE
+Ashley 9/19/76
+	Student, Major: CS
+Ms. Patrice 5/24/82
+	Instructor, Salary: 62000
+Peter 6/14/80
+Omar 7/4/94
+[004893625@csex11 uml]$ exit
+exit
+
+Script done on Wed 11 May 2016 09:43:16 AM PDT

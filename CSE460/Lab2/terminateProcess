@@ -1,0 +1,16 @@
+#initialize
+count=0
+for pid in $(ps -e -f | grep $1 | grep -v grep | grep -v $0 | awk '{print $2}')
+do
+kill $pid
+#increment
+((count+=1))
+done
+#check
+if(($count > 0));
+then
+echo "The $count Process are deleted!"
+else
+echo "No process found."
+fi
+exit 0

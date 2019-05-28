@@ -1,0 +1,192 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <stack>
+#include <vector>
+
+#ifndef READER_H
+#define READER_H
+
+class reader
+{
+	public:
+	std::string file;
+	std::string name_of_class;
+	std::vector<std::string> names;
+
+	reader();
+	reader(std::string filename);
+	int TotalLinesOfCode();
+	std::map<std::string, int> MemberLinesOfCode();
+
+	private:
+	std::string Helper(std::string str);
+	int CountMember(int line_number);
+	std::map<std::string, int> MemberNames(std::string class_name);
+};
+
+
+#endif
+
+//default constructor
+//will cause the program to exit if no parameters are given.
+reader::reader() {
+	exit(EXIT_FAILURE);
+}
+//constructor
+reader::reader(std::string filename) {
+	this->file = filename;
+}
+
+//This function will count the total number of lines in a file, it willl loop
+//till the end of the file.
+int reader::TotalLinesOfCode()
+{
+	int lines = 0;
+	std::string str = "";
+
+	std::ifstream iffstream;
+	iffstream.open(file.c_str());
+
+	if(iffstream.is_open()) {
+		while(!iffstream.eof()) {
+			std::getline(iffstream, str);
+			if (str.substr(0,2) != "//" and !str.empty()) {
+				lines++;
+			}
+		}
+	}
+
+	return lines;
+}
+
+//This program will count create a map data structure containing each object
+// or function name along with its association line count. It utilizes two
+//helper functions for this task.
+std::map<std::string, int> reader::MemberLinesOfCode() {
+	int lines = 0;
+	int member_lines = 0;
+	std::ifstream iffstream;
+	iffstream.open(file.c_str());
+	std::string str = "";
+	std::string temp_str = "";
+	std::map<std::string, int> object_map;
+	std::map<std::string, int> new_map;
+
+	if(iffstream.is_open()) {
+		while(!iffstream.eof()) {			
+			std::getline(iffstream, str);
+			if(str.find("class") != std::string::npos) {
+				std::size_t size = str.find("class");
+				if(str.substr(0,2) != "//"
+				 and str.substr(size,size + 4) == "class") {
+					std::string object_name	 = this->Helper(str);
+					name_of_class = object_name;
+					names.push_back(object_name);
+					member_lines = this->CountMember(lines);
+					object_map.emplace( object_name, member_lines);
+				
+				new_map = MemberNames(name_of_class);
+				object_map.insert(new_map.begin(), new_map.end());
+				}
+				lines++;
+			}
+		}
+	}
+	return object_map;
+}
+
+//reads the string to find class declartion, then strips out name of class and returns 
+//the string
+std::string reader::Helper(std::string str) {
+	std::string class_string = "class";
+	std::string::size_type size  = str.find(class_string);
+	std::string::size_type size1 = str.find("{");
+	if(size != std::string::npos)
+		str.erase(size, class_string.length());
+	
+	if(size1 and size1 != std::string::npos)
+		str.erase(size1, 1);
+	
+
+	return str;
+
+}
+
+//Counts the number of lines based on the starting position of the file, returns the 
+//result as an integer.
+int reader::CountMember(int line_number) {
+	std::string str = this->file;
+	std::ifstream iffstream;
+	iffstream.open(file.c_str());
+	int num = 0;
+	int lines = 0;
+	std::string check = "";
+	//navigate to line number
+	while(num < line_number)
+	{
+		std::getline(iffstream, str);
+	}
+	num = 0;//reuse int
+	std::stack<char> braces;
+
+	char c = '\0';
+	std::size_t number = 0;
+	//this loop checks for matching braces, throughout the file, if the braces
+	//are not matching return 0. otherwise return the number of lines of the 
+	//object/function
+	while(!iffstream.eof()){
+		getline(iffstream, str);
+		for (; number < str.length(); number++) {
+			c = str.at(number);
+
+			if(c == '{')
+				braces.push(c);
+			else if(c == '}')
+				if(braces.empty())
+					return lines;
+				else if(braces.top() == '{')
+					braces.pop();
+				else
+					return 0;
+		}
+		lines++;
+	}
+	return lines;
+}
+
+std::map<std::string, int> reader::MemberNames(std::string class_name) {
+	std::map<std::string, int> member_names;
+	std::string extension = this->file.substr(this->file.length() - 4, 4);
+	std::string line = "";
+	std::string str = "";
+	int line_number = 0;
+
+	std::ifstream iffstream;
+	iffstream.open(file.c_str());
+
+	if(extension != ".cpp") {
+		std::cout << "Can only read .cpp files \n";
+		return member_names;
+	}
+
+	while(std::getline(iffstream, line)) {
+		if(line == class_name) {
+			std::string::size_type size  = line.find(class_name);
+			std::string::size_type size1 = line.find("{");
+			if(size != std::string::npos)
+				line.erase(size, class_name.length());
+
+			if(size1 != std::string::npos)
+				line.erase(size1, 1);
+
+			member_names.emplace(line, line_number);
+			names.push_back(line);
+		}
+		line_number++;
+	}
+	return member_names;
+
+}
+

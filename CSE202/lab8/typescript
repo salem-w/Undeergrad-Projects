@@ -1,0 +1,28 @@
+Script started on Wed 01 Jun 2016 12:46:45 PM PDT
+[004893625@csex11 lab8]$ ./a.out
+5
+10
+15
+20
+25
+30
+35
+40
+Enter numbers to search for in the vector Ctrl D to stop 
+1
+15
+18
+40
+30
+50
+The output is: 
+-1
+2
+-1
+7
+5
+-1
+[004893625@csex11 lab8]$ exit
+exit
+
+Script done on Wed 01 Jun 2016 12:47:19 PM PDT

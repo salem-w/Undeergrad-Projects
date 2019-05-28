@@ -1,0 +1,11 @@
+#Q5
+clear
+#assign variables
+x=20
+y=5
+#assin divide
+z=$(($x/$y))
+echo "x/y is"
+echo $z
+exit 0
+

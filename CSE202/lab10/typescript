@@ -1,0 +1,17 @@
+Script started on Wed 08 Jun 2016 04:18:06 PM PDT
+]0;004893625@jb359-10:/students/csci/004893625/CSE202/lab10]7;file://jb359-10.cse.csusb.edu/students/csci/004893625/CSE202/lab10[?1034h[004893625@jb359-10 lab10]$ ./a.out
+Enter a month name: Jan
+This is a 31-day month.
+]0;004893625@jb359-10:/students/csci/004893625/CSE202/lab10]7;file://jb359-10.cse.csusb.edu/students/csci/004893625/CSE202/lab10[004893625@jb359-10 lab10]$ ./a.out
+Enter a month name: May
+This is a 31-day month.
+]0;004893625@jb359-10:/students/csci/004893625/CSE202/lab10]7;file://jb359-10.cse.csusb.edu/students/csci/004893625/CSE202/lab10[004893625@jb359-10 lab10]$ ./a.out
+Enter a month name: February
+This is a non-31-day month or it is an invalid month name.
+]0;004893625@jb359-10:/students/csci/004893625/CSE202/lab10]7;file://jb359-10.cse.csusb.edu/students/csci/004893625/CSE202/lab10[004893625@jb359-10 lab10]$ ./a.out
+Enter a month name: Feb
+This is a non-31-day month or it is an invalid month name.
+]0;004893625@jb359-10:/students/csci/004893625/CSE202/lab10]7;file://jb359-10.cse.csusb.edu/students/csci/004893625/CSE202/lab10[004893625@jb359-10 lab10]$ exit
+exit
+
+Script done on Wed 08 Jun 2016 04:18:48 PM PDT

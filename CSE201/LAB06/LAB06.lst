@@ -1,0 +1,15 @@
+Script started on Mon 21 Mar 2016 12:16:55 PM PDT
+]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[?1034h[004893625@jb359-4 LAB06]$ exitvi SALEM_LAB05B.cppexit[K[K./l[K[K/lab[K[K[KLAB06_1.O[K[K.out
+The largest number in the array is 12]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[004893625@jb359-4 LAB06]$ ./LAB06_1.out[1P.out3.out
+Here is the new vector 4, 8, 2, 12, 3, 67, 34, ]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[004893625@jb359-4 LAB06]$ ./LAB06_3.out[1P.out4.out
+Enter a value you would like to insert into the vector:
+13
+1 4 7 12 13 17 
+]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[004893625@jb359-4 LAB06]$ ./LAB06_4.out[1P.out6.out
+They are not the same!
+]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[004893625@jb359-4 LAB06]$ ./LAB06_6.out[1P.out8.out
+The numbers are not in increasing order!
+]0;004893625@jb359-4:~/CSE201/LAB06]7;file://jb359-4/u/csci/004893625/CSE201/LAB06[004893625@jb359-4 LAB06]$ exit
+exit
+
+Script done on Mon 21 Mar 2016 12:17:46 PM PDT

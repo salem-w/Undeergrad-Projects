@@ -1,0 +1,17 @@
+Script started on Thu 28 Jan 2016 12:21:27 PM PST
+]0;004893625@jb359-9:/students/csci/004893625/CSE201/LAB02]7;file://jb359-9/students/csci/004893625/CSE201/LAB02[?1034h[004893625@jb359-9 LAB02]$ exitlpr salem_LAB02_B.cppc++[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clpr[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc++[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13P./a.outc++ salem_LAB02_B.cpp[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@c++[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K./a.out
+Enter a number for x 
+1
+Enter a number for y 
+2
+Enter a number for z 
+3
+The total for the three numbers is 6
+The sine of x is 0.0174524
+The cosine of ((x + y)z) is 0.540302
+The average of x, y and z is 2
+The log2 of x is 0
+]0;004893625@jb359-9:/students/csci/004893625/CSE201/LAB02]7;file://jb359-9/students/csci/004893625/CSE201/LAB02[004893625@jb359-9 LAB02]$ exit
+exit
+
+Script done on Thu 28 Jan 2016 12:21:59 PM PST

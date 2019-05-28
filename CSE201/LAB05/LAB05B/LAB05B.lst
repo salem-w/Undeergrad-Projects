@@ -1,0 +1,43 @@
+Script started on Thu 03 Mar 2016 08:54:05 AM PST
+]0;004893625@jb359-3:/students/csci/004893625/CSE201/LAB05/LAB05B]7;file://jb359-3/students/csci/004893625/CSE201/LAB05/LAB05B[?1034h[004893625@jb359-3 LAB05B]$ exitEXIT./SALEM_LAB05B
+Enter the amount of brown eggs in the carton: 
+k 5
+Enter the amount of white eggs in the carton: 
+4 3
+The egg carton has a total of 8 eggs.
+Do you wish to add more eggs? (y/n) y
+How many brown eggs do you want to add? 
+2
+How many white eggs do you want to add: 
+6
+There are too many eggs in the carton 
+Enter a new value for the white eggs: 
+1
+The egg carton has a total of 11 eggs.
+Do you wish to add more eggs? (y/n) y
+How many brown eggs do you want to add? 
+1
+How many white eggs do you want to add: 
+0
+The program is done!]0;004893625@jb359-3:/students/csci/004893625/CSE201/LAB05/LAB05B]7;file://jb359-3/students/csci/004893625/CSE201/LAB05/LAB05B[004893625@jb359-3 LAB05B]$ ./SALEM_LAB05B
+Enter the amount of brown eggs in the carton: 
+13
+Enter the amount of white eggs in the carton: 
+4
+There are more than twelve eggs in the carton please enter a different amount of eggs.
+Number of brown eggs: 
+4
+Number of white eggs: 
+5
+The egg carton has a total of 9 eggs.
+Do you wish to add more eggs? (y/n) y
+How many brown eggs do you want to add? 
+2
+How many white eggs do you want to add: 
+0
+The egg carton has a total of 11 eggs.
+Do you wish to add more eggs? (y/n) n
+The program is done!]0;004893625@jb359-3:/students/csci/004893625/CSE201/LAB05/LAB05B]7;file://jb359-3/students/csci/004893625/CSE201/LAB05/LAB05B[004893625@jb359-3 LAB05B]$ exit
+exit
+
+Script done on Thu 03 Mar 2016 08:55:26 AM PST

@@ -1,0 +1,19 @@
+Script started on Wed 13 Apr 2016 11:44:53 AM PDT
+[004893625@csex11 LAB01]$ ./Bank
+Does not match any of the account types! Please try again.
+Does not match any of the account types! Please try again.
+Not enough balance $5 penalty charged.
+Savings: 1010
+Checking: 125
+[004893625@csex11 LAB01]$ cd md[Kod*
+[004893625@csex11 modified_files]$ ls
+Account.cpp  Account_main.cpp  [0m[01;32mAccount_mod[0m  makefile
+Account.h    Account_main.o    Account.o
+[004893625@csex11 modified_files]$ cd=[K[K[K./Account_mod
+Enter an interest rate:
+6
+12 years until you reach $20000.
+[004893625@csex11 modified_files]$ exit
+exit
+
+Script done on Wed 13 Apr 2016 11:45:28 AM PDT

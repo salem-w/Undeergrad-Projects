@@ -1,0 +1,115 @@
+(gdb) file kernel
+A program is being debugged already.
+Are you sure you want to change the file? (y or n) y
+Reading symbols from kernel...done.
+(gdb) break swtch
+Breakpoint 1 at 0x8010479b: file swtch.S, line 11.
+(gdb) continue
+Continuing.
+[Switching to Thread 2]
+
+Thread 2 hit Breakpoint 1, swtch () at swtch.S:11
+11	  movl 4(%esp), %eax
+(gdb) step
+12	  movl 8(%esp), %edx
+(gdb) step
+15	  pushl %ebp
+(gdb) step
+swtch () at swtch.S:16
+16	  pushl %ebx
+(gdb) step
+swtch () at swtch.S:17
+17	  pushl %esi
+(gdb) step
+swtch () at swtch.S:18
+18	  pushl %edi
+(gdb) step
+swtch () at swtch.S:21
+21	  movl %esp, (%eax)
+(gdb) step
+22	  movl %edx, %esp
+(gdb) step
+swtch () at swtch.S:25
+25	  popl %edi
+(gdb) step
+swtch () at swtch.S:26
+26	  popl %esi
+(gdb) step
+swtch () at swtch.S:27
+27	  popl %ebx
+(gdb) step
+swtch () at swtch.S:28
+28	  popl %ebp
+(gdb) step
+swtch () at swtch.S:29
+29	  ret
+(gdb) step
+forkret () at proc.c:401
+401	  release(&ptable.lock);
+(gdb) step
+release (lk=0x80112d20 <ptable>) at spinlock.c:49
+49	  if(!holding(lk))
+(gdb) continue
+Continuing.
+
+Thread 2 hit Breakpoint 1, swtch () at swtch.S:11
+11	  movl 4(%esp), %eax
+(gdb) clear
+Deleted breakpoint 1 
+(gdb) break exec
+Breakpoint 2 at 0x80100a80: file exec.c, line 20.
+(gdb) continue
+Continuing.
+
+Thread 2 hit Breakpoint 2, exec (path=0x1c "/init", argv=0x8dfffed0)
+    at exec.c:20
+20	  struct proc *curproc = myproc();
+(gdb) step
+myproc () at proc.c:62
+62	  c = mycpu();
+(gdb) continue
+Continuing.
+
+Thread 2 hit Breakpoint 2, exec (path=0x846 "sh", argv=0x8dffeed0) at exec.c:20
+20	  struct proc *curproc = myproc();
+(gdb) continue
+Continuing.
+ls -l
+[Switching to Thread 1]
+
+Thread 1 hit Breakpoint 2, exec (path=0x18e0 "ls", argv=0x8dfbeed0)
+    at exec.c:20
+20	  struct proc *curproc = myproc();
+(gdb) ls -l
+Undefined command: "ls".  Try "help".
+
+//I386 DUMP****************************
+***************************************
+***************************************
+set disassembly-flavor intel
+(gdb) disass
+Dump of assembler code for function exec:
+=> 0x80100a80 <+0>:	push   ebp
+   0x80100a81 <+1>:	mov    ebp,esp
+   0x80100a83 <+3>:	push   edi
+   0x80100a84 <+4>:	push   esi
+   0x80100a85 <+5>:	push   ebx
+   0x80100a86 <+6>:	sub    esp,0x10c
+   0x80100a8c <+12>:	call   0x801038e0 <myproc>
+   0x80100a91 <+17>:	mov    DWORD PTR [ebp-0x114],eax
+   0x80100a97 <+23>:	call   0x80102ca0 <begin_op>
+   0x80100a9c <+28>:	sub    esp,0xc
+   0x80100a9f <+31>:	push   DWORD PTR [ebp+0x8]
+   0x80100aa2 <+34>:	call   0x80101fc0 <namei>
+   0x80100aa7 <+39>:	add    esp,0x10
+   0x80100aaa <+42>:	test   eax,eax
+   0x80100aac <+44>:	je     0x80100db4 <exec+820>
+   0x80100ab2 <+50>:	sub    esp,0xc
+   0x80100ab5 <+53>:	mov    ebx,eax
+   0x80100ab7 <+55>:	push   eax
+   0x80100ab8 <+56>:	call   0x80101720 <ilock>
+   0x80100abd <+61>:	lea    eax,[ebp-0xdc]
+   0x80100ac3 <+67>:	push   0x34
+   0x80100ac5 <+69>:	push   0x0
+---Type <return> to continue, or q <return> to quit---
+

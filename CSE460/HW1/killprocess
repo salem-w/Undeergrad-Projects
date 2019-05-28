@@ -1,0 +1,9 @@
+process=$(ps auxw | grep "test1" | grep -v grep | awk '{print $2}')
+if [-z $process ];
+then echo;
+echo "Process test1 does not exist";
+echo;
+else kill $process;
+echo "Process test1 killed!";
+echo;
+fi

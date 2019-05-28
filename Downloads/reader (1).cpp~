@@ -1,0 +1,165 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <regex>
+#include <stack>
+
+#include "stdafx.h"
+
+#include "reader.h"
+//default constructor
+//will cause the program to exit if no parameters are given.
+reader::reader() {
+	exit(EXIT_FAILURE);
+}
+//constructor
+reader::reader(std::string filename) {
+	this->file = filename;
+	std::ifstream filestream(filename.c_str());
+}
+
+//This function will count the total number of lines in a file, it willl loop
+//till the end of the file.
+int reader::TotalLinesOfCode()
+{
+	int lines = 0;
+	std::string str = "";
+
+	std::regex comment_regx("\\b//\\b");
+
+	if(filestream.is_open()) {
+		while(!filestream.eof()) {
+			std::getline(filestream, str);
+			if (!regex_match(str, comment_regx) and str != "\0")
+				lines++;
+		}
+	}
+
+	return lines;
+}
+
+//This program will count create a map data structure containing each object
+// or function name along with its association line count. It utilizes two
+//helper functions for this task.
+std::map<std::string, int> reader::MemberLinesOfCode() {
+	int lines = 0;
+	int member_lines = 0;
+	std::string str = "";
+	std::string temp_str = "";
+	std::map<std::string, int> object_map;
+	std::map<std::string, int> new_map;
+
+	std::regex reg_x("\\bclass\\b");
+	std::regex comment_regx("\\b//\\b");
+
+	if(filestream.is_open()) {
+		while(!filestream.eof()) {
+			if(!std::regex_match(str, comment_regx)
+			 and std::regex_match(str,reg_x)) {
+				std::getline(filestream, str);
+				std::string object_name	 = this->Helper(str);
+				name_of_class = object_name;
+				names.push_back(object_name);
+				member_lines = this->CountMember(lines);
+				object_map.emplace( object_name, member_lines);
+			}
+			new_map = MemberNames(name_of_class);
+			object_map.insert(new_map.begin(), new_map.end());
+
+
+			lines++;
+		}
+	}
+	return object_map;
+}
+
+//reads the string to find class declartion, then strips out name of class and returns 
+//the string
+std::string reader::Helper(std::string str) {
+	std::string class_string = "class";
+	std::string::size_type size  = str.find(class_string);
+	std::string::size_type size1 = str.find("{");
+	if(size != std::string::npos)
+		str.erase(size, class_string.length());
+	
+	if(size1 and size1 != std::string::npos)
+		str.erase(size1, 1);
+	
+
+	return str;
+
+}
+
+//Counts the number of lines based on the starting position of the file, returns the 
+//result as an integer.
+int reader::CountMember(int line_number) {
+	std::string str = this->file;
+	int num = 0;
+	int lines = 0;
+	std::string check = "";
+	//navigate to line number
+	while(num < line_number)
+	{
+		std::getline(filestream, str);
+	}
+	num = 0;//reuse int
+	std::stack<char> braces;
+
+	char c = '\0';
+	std::size_t number = 0;
+	//this loop checks for matching braces, throughout the file, if the braces
+	//are not matching return 0. otherwise return the number of lines of the 
+	//object/function
+	while(!filestream.eof()){
+		getline(filestream, str);
+		for (; number < str.length(); number++) {
+			c = str.at(number);
+
+			if(c == '{')
+				braces.push(c);
+			else if(c == '}')
+				if(braces.empty())
+					return lines;
+				else if(braces.top() == '{')
+					braces.pop();
+				else
+					return 0;
+		}
+		lines++;
+	}
+	return lines;
+}
+
+std::map<std::string, int> reader::MemberNames(std::string class_name) {
+	std::map<std::string, int> member_names;
+	std::string extension = this->file.substr(this->file.length() - 4, 4);
+	std::string line = "";
+	std::string str = "";
+	int line_number = 0;
+
+	if(extension != ".cpp") {
+		std::cout << "Can only read .cpp files \n";
+		return member_names;
+	}
+
+	std::regex class_regx("\\b" + class_name + "::\\b");
+	while(std::getline(filestream, line)) {
+		if(std::regex_match(line, class_regx)) {
+			std::string::size_type size  = line.find(class_name);
+			std::string::size_type size1 = line.find("{");
+			if(size != std::string::npos)
+				line.erase(size, class_name.length());
+
+			if(size1 != std::string::npos)
+				line.erase(size1, 1);
+
+			member_names.emplace(line, line_number);
+			names.push_back(line);
+		}
+		line_number++;
+	}
+	return member_names;
+
+}
+
