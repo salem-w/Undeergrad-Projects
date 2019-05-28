@@ -1,2 +1,2 @@
-# Undeergrad-Projects
+# Undergrad-Projects
 Projects during my undergraduate schooling
